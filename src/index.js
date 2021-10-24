@@ -8,51 +8,91 @@ const initialResults = {A: 0, B: 0, C: 0, D: 0};
 const data = [
   {
     page: 1,
-    question: 'What is your favorite fruit?',
+    question: 'At the museum, you will gravitate to..',
     answer: {
-      A: 'https://www.miffy.com/assets/img/icons/og-image-200x200.png',
-      B: 'https://www.miffy.com/assets/img/icons/og-image-200x200.png',
-      C: 'https://www.miffy.com/assets/img/icons/og-image-200x200.png',
-      D: 'https://www.miffy.com/assets/img/icons/og-image-200x200.png'
+      A: '/assets/images/qA1.jpg',
+      B: '/assets/images/qB1.jpg',
+      C: '/assets/images/qC1.jpg',
+      D: '/assets/images/qD1.jpg',
     }
   },
   {
     page: 2,
-    question: 'What is your favourite cuisine?',
+    question: 'Your style icon resembles..',
     answer: {
-      A: 'https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/7b/27/20/7b2720a6-f75e-21c7-6338-8dc0df961cc5/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200bb.png',
-      B: 'https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/7b/27/20/7b2720a6-f75e-21c7-6338-8dc0df961cc5/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200bb.png',
-      C: 'https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/7b/27/20/7b2720a6-f75e-21c7-6338-8dc0df961cc5/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200bb.png',
-      D: 'https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/7b/27/20/7b2720a6-f75e-21c7-6338-8dc0df961cc5/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200bb.png',
+      A: 'assets/images/qA2.jpg',
+      B: 'assets/images/qB2.jpg',
+      C: 'assets/images/qC2.jpg',
+      D: 'assets/images/qD2.jpg',
     }
   },
   {
     page: 3,
-    question: 'It is Sunday. What will you be doing?',
+    question: 'The color palette that attracts you..',
     answer: {
-      A: 'Reading news',
-      B: 'Outdoor adventure',
-      C: 'Catching up on sleep!',
-      D: 'Out in town to shop :-)'
+      A: 'assets/images/qA3.jpg',
+      B: 'assets/images/qB3.jpg',
+      C: 'assets/images/qC3.jpg',
+      D: 'assets/images/qD3.jpg',
     }
   },
   {
     page: 4,
-    question: 'When it comes to tailoring, you are looking for...',
+    question: 'The perfect place for a date..',
     answer: {
-      A: 'Service',
-      B: 'Quality',
-      C: 'Fit',
-      D: 'Convenience'
+      A: 'assets/images/qA4.jpg',
+      B: 'assets/images/qB4.jpg',
+      C: 'assets/images/qC4.jpg',
+      D: 'assets/images/qD4.jpg',
     }
   },
+  {
+    page: 5,
+    question: 'Your dressing for a show at the Esplanade..',
+    answer: {
+      A: 'assets/images/qA5.jpg',
+      B: 'assets/images/qB5.jpg',
+      C: 'assets/images/qC5.jpg',
+      D: 'assets/images/qD5.jpg',
+    }
+  },
+  {
+    page: 6,
+    question: 'You have interest in..',
+    answer: {
+      A: 'assets/images/qA6.jpg',
+      B: 'assets/images/qB6.jpg',
+      C: 'assets/images/qC6.jpg',
+      D: 'assets/images/qD6.jpg',
+    }
+  },
+  {
+   page: 7,
+   question: 'You would travel to..',
+   answer: {
+     A: 'assets/images/qA7.jpg',
+     B: 'assets/images/qB7.jpg',
+     C: 'assets/images/qC7.jpg',
+     D: 'assets/images/qD7.jpg',
+   } 
+  },
+  {
+    page: 8,
+    question: 'It\'s the weekends and you are found..',
+    answer: {
+      A: 'assets/images/qA8.jpg',
+      B: 'assets/images/qB8.jpg',
+      C: 'assets/images/qC8.jpg',
+      D: 'assets/images/qD8.jpg',
+    }
+  }
 ];
 
 function Question({pageNumber}) { 
   return pageNumber.map(item => {
   return (
-    <div key={item.page}>
-      <h1>{item.question}</h1>
+    <div key={item.page} className='question'>
+      <h3>{item.question}</h3>
     </div>
   )
 })
@@ -61,7 +101,7 @@ function Question({pageNumber}) {
 function Answer({pageNumber, handleClick}) {
   return pageNumber.map(item => {
     return (
-      <div className='imgBtnGrp'>{Object.entries(item.answer).map(([key, value]) => <input type='image' className='imgBtn' src={value} onClick={handleClick} value={key}></input>)}</div> 
+      <div className='imgBtnGrp' key={item.pageNumber}>{Object.entries(item.answer).map(([key, value]) => <input type='image' key={key} className='imgBtn' src={value} onClick={handleClick} value={key}></input>)}</div> 
     )
   })
 }
@@ -82,8 +122,12 @@ function reducer(state, action) {
 }
 
 function Results({results}) {
-  let personality = `You are `;
-  for (let [key, value] of Object.entries(results)) {
+  let mainTrait;
+  let youAre = 'You are: ';
+  let personality = [];
+  let sortedResults = Object.fromEntries(Object.entries(results).sort(([, a], [, b]) => b - a))
+  console.log(sortedResults);
+  for (let [key, value] of Object.entries(sortedResults)) {
     switch (key) {
       case 'A':
         key = 'Romantic';
@@ -98,13 +142,23 @@ function Results({results}) {
         key = 'Natural';
         break;
     }
-    let percentage = (value/(data.length)) * 100
-    personality += `${percentage}% ${key} ` 
+    let percentage = +(((value/(data.length)) * 100).toFixed(0));
+    if (personality.length === 0) {
+      mainTrait = key;
+    }
+    if (percentage === 0) {
+      continue
+    };
+    personality.push(`${percentage}% ${key}`); 
   }
+  const personalityResult = personality.map(results => <p>{results}</p>)
   return (
-  <>
-  <h1>{personality}</h1>
-  </>
+  <div className='results'>
+    <h3>{youAre}</h3>
+    <b>{personalityResult}</b>
+    <hr/>
+    <p>Your main personality is: {mainTrait}</p>
+  </div>
   )
 }
 
@@ -122,7 +176,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={`main${currentPage === data.length + 1 ? 'Results': ''}`}>
       <Question pageNumber={pageNumber()} />
       <Answer pageNumber={pageNumber()} handleClick={handleClick} />
       {currentPage === data.length + 1 ? (<Results results={results} />) : ''}
