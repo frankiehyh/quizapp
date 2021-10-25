@@ -1,6 +1,9 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { FacebookShareButton } from 'react-share';
+import { FacebookIcon } from 'react-share';
+import FacebookLogin from 'react-facebook-login';
 // import Button from '@mui/material/Button';
 
 const initialResults = {A: 0, B: 0, C: 0, D: 0};
@@ -92,7 +95,7 @@ function Question({pageNumber}) {
   return pageNumber.map(item => {
   return (
     <div key={item.page} className='question'>
-      <h3>{item.question}</h3>
+      <h2>{item.question}</h2>
     </div>
   )
 })
@@ -141,6 +144,8 @@ function Results({results}) {
       case 'D':
         key = 'Natural';
         break;
+      default:
+        throw new Error();
     }
     let percentage = +(((value/(data.length)) * 100).toFixed(0));
     if (personality.length === 0) {
@@ -162,10 +167,34 @@ function Results({results}) {
   )
 }
 
+function Navbar({ children }) {
+  return (
+    <div className='navbar'>
+      <a href='https://cyctailor.com'><img src='cycLogo.png' alt='CYC Made to Measure'/></a>
+      {children}
+    </div>
+  )
+}
+
 function App() {
+  const useSemiPersistantState = (key, initialState) => {
+    const [value, setValue] = useState(localStorage.getItem(key) || initialState);
+    useEffect(() => {
+      localStorage.setItem(key, value)
+    }, [value, key]);
+    return [value, setValue];
+  }
+  const [loggedIn, setLogin] = useSemiPersistantState('loggedIn', false);
+  // const [name, setName] = useSemiPersistantState('name', 'Guest');
+  const [name, setName] = useState('');
+  const changes = e => setName(e.name);
+  const responseFacebook = response => {
+    changes(response);
+    setLogin(true);
+    setName(response.name);
+  }
   const [currentPage, setNextPage] = useState(1);
   const [results, setResults] = useReducer(reducer, initialResults);
-
   const handleClick = e => {
     setResults(({type: e.target.value}), );
     setNextPage(currentPage + 1);
@@ -177,6 +206,21 @@ function App() {
 
   return (
     <div className={`main${currentPage === data.length + 1 ? 'Results': ''}`}>
+      <Navbar>
+        <h4>Personality</h4>
+        <h4>Consultation</h4>
+        <h4>About</h4>
+        <h4 id='username'>
+          {(loggedIn === true) ? name : <FacebookLogin
+          appId="211663417570792"
+          autoLoad={false}
+          fields="name,email,picture"
+          callback={responseFacebook}
+          cssClass='fbLoginBtn'
+          icon="fa-facebook"
+          textButton=''
+      />}</h4>
+      </Navbar>
       <Question pageNumber={pageNumber()} />
       <Answer pageNumber={pageNumber()} handleClick={handleClick} />
       {currentPage === data.length + 1 ? (<Results results={results} />) : ''}
