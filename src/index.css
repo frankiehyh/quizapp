@@ -4,12 +4,13 @@ body {
 
 #username {
   float: right;
-  margin-right: 0.3rem;
+  margin-right: 1rem;
 }
 
 .fbLoginBtn {
+  background-color: white;
+  border: 0px;
   display: flex;
-  position: flex;
   justify-content: center;
   margin:auto;
 }
