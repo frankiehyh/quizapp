@@ -1,110 +1,72 @@
 body {
-  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-#username {
-  float: right;
-  margin-right: 1rem;
+*{
+  box-sizing: border-box;
 }
-
-.fbLoginBtn {
-  background-color: white;
-  border: 0px;
+.main {
   display: flex;
-  justify-content: center;
-  margin:auto;
-}
-
-.greetings {
-  display: flex;
-  position: flex;
-  justify-content: center;
-  margin: auto;
-}
-
-.greeting h4 {
-  display: flex;
-  position: flex;
-  align-self:center;
-  justify-content: center;
-  padding: auto; 
-}
-
-.question {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  margin: 5rem 5rem 5rem 5rem;
-  justify-content: center;
-  position: flex;
-}
-
-.question h2 {
-  margin: 1rem auto;
-  position: absolute;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1;
+  margin: 0 auto;
 }
 
 .navbar {
-  background-color: black;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  background: black;
   color: white;
-  display: flex;
   overflow: hidden;
-  margin: auto;
+  margin: .1em;
 }
 
-.navbar img {
-  float: left;
-  max-height: 3rem;
-  max-width: 3rem;
-  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-.navbar h4 {
-  display: flex;
-  align-self: flex-end;
-  margin: 1rem auto;
+#logo {
+  max-width: 5em;
+  max-height: 5em;
 }
 
 .imgBtnGrp {
   display: flex;
   flex-wrap: wrap;
-  margin: 10rem auto;
   justify-content: center;
+  align-items:stretch;
+  margin: 10em auto;
+  flex-grow: 1;
+
 }
 
-.imgBtn{
-  min-width: 10rem;
-  min-height: 10rem;
-  max-width: 10rem;
-  max-height: 10rem;
-  background-color: white;
-  padding:1px;
-  border-radius:20px;
-  color:whitesmoke;
+.imgBtn {
+  border-radius: .5em;
   display: flex;
-  align-items:center;
-  justify-content:center;
-  font-size:40px;
-  font-family:sans-serif;
+  flex: 1;
+  min-width: 15em;
+  max-width: 15em;
+  min-height: 15em;
+  max-height: 15em;
 }
 
-.results {
-  margin: 2rem;
-  display: wrap;
-  padding: 1rem;
-  color:whitesmoke;
+.footer {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: .5em;
+  background: black;
+  color: white;
+  overflow: hidden;
 }
 
-.results ul {
-  padding: 0.5rem;
-  color:whitesmoke;
-}
-
-.results p {
-  padding: 0.5rem;
-  color:whitesmoke;
-}
-
-.mainResults {
-  background: url('../../quizapp/src/results.jpg')
+.question {
+  justify-content: center;
+  display: flex;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: 0;
+  font-size: 1em;
 }

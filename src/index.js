@@ -51,7 +51,7 @@ const data = [
   },
   {
     page: 5,
-    question: 'Your dressing for a show at the Esplanade..',
+    question: 'To the Esplanade, you\'re dressed like..',
     answer: {
       A: 'assets/images/qA5.jpg',
       B: 'assets/images/qB5.jpg',
@@ -87,6 +87,16 @@ const data = [
       B: 'assets/images/qB8.jpg',
       C: 'assets/images/qC8.jpg',
       D: 'assets/images/qD8.jpg',
+    }
+  },
+  {
+    page: 9,
+    question: 'Choose a print from these options..',
+    answer: {
+      A:'',
+      B:'',
+      C:'',
+      D:'',
     }
   }
 ];
@@ -170,7 +180,15 @@ function Results({results}) {
 function Navbar({ children }) {
   return (
     <div className='navbar'>
-      <a href='https://cyctailor.com'><img src='cycLogo.png' alt='CYC Made to Measure'/></a>
+      <a href='https://cyctailor.com'><img src='cycLogo.png' alt='CYC Made to Measure' id='logo'/></a>
+      {children}
+    </div>
+  )
+}
+
+function Footer({ children }) {
+  return (
+    <div className='footer'>
       {children}
     </div>
   )
@@ -205,10 +223,10 @@ function App() {
   }
 
   return (
-    <div className={`main${currentPage === data.length + 1 ? 'Results': ''}`}>
+    <div className='main'>
       <Navbar>
         <h4>Personality</h4>
-        <h4>Consultation</h4>
+        <h4>Speak With Us</h4>
         <h4>About</h4>
         <h4 id='username'>
           {(loggedIn === true) ? name : <FacebookLogin
@@ -224,6 +242,9 @@ function App() {
       <Question pageNumber={pageNumber()} />
       <Answer pageNumber={pageNumber()} handleClick={handleClick} />
       {currentPage === data.length + 1 ? (<Results results={results} />) : ''}
+      <Footer>
+        <h1 id='footerText'>© CYC Company Pte Ltd. All rights reserved.</h1>
+      </Footer>
     </div>
   )
 }
