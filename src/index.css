@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden;
   flex: 1;
   margin: 0 auto;
 }
@@ -48,6 +49,7 @@ body {
   max-width: 15em;
   min-height: 15em;
   max-height: 15em;
+  margin-top: -5em;
 }
 
 .footer {
@@ -68,5 +70,7 @@ body {
   padding-top: 1em;
   padding-bottom: 1em;
   margin: 0;
+  margin-bottom: -5em;
+  margin-top: 2em;
   font-size: 1em;
 }
