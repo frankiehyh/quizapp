@@ -152,7 +152,8 @@ function Results({ results }) {
       </FacebookShareButton>
       <WhatsappShareButton
         className="waShare"
-        title={"https://quiz.cyctailor.com"}
+        title={"CYC Personality Quiz"}
+        separator={" "}
       >
         <WhatsappIcon size={32} round />
         <p>Share on WhatsApp</p>
