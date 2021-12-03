@@ -194,15 +194,15 @@ function App() {
     }, [value, key]);
     return [value, setValue];
   };
-  const [loggedIn, setLogin] = useSemiPersistantState("loggedIn", false);
+  // const [loggedIn, setLogin] = useSemiPersistantState("loggedIn", false);
   // const [name, setName] = useSemiPersistantState('name', 'Guest');
   const [name, setName] = useState("");
-  const changes = (e) => setName(e.name);
-  const responseFacebook = (response) => {
-    changes(response);
-    setLogin(true);
-    setName(response.name);
-  };
+  // const changes = (e) => setName(e.name);
+  // const responseFacebook = (response) => {
+  //   changes(response);
+  //   setLogin(true);
+  //   setName(response.name);
+  // };
   const [currentPage, setNextPage] = useState(1);
   const [results, setResults] = useReducer(reducer, initialResults);
   const handleClick = (e) => {
