@@ -1,7 +1,7 @@
 const data = [
   {
     page: 1,
-    question: "At the museum, you will gravitate to..",
+    question: "At the museum, you will look at this first..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA1.png",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB1.png",
@@ -11,7 +11,7 @@ const data = [
   },
   {
     page: 2,
-    question: "Your style icon resembles..",
+    question: "Your style icon is..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA2.png",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB2.png",
@@ -21,7 +21,7 @@ const data = [
   },
   {
     page: 3,
-    question: "The color palette that attracts you..",
+    question: "The colors that catches your attention first..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA3.png",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB3.png",
@@ -31,7 +31,7 @@ const data = [
   },
   {
     page: 4,
-    question: "The perfect place for a date..",
+    question: "Your ideal dating spot..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA4.png",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB4.png",
@@ -41,7 +41,7 @@ const data = [
   },
   {
     page: 5,
-    question: "Your dressing for a show at the Esplanade..",
+    question: "Your outfit for a show at the Esplanade..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA5.png",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB5.png",
@@ -51,7 +51,7 @@ const data = [
   },
   {
     page: 6,
-    question: "You have interest in..",
+    question: "The activity you will be interested..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA6.png",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB6.png",
@@ -61,7 +61,7 @@ const data = [
   },
   {
     page: 7,
-    question: "You would travel to..",
+    question: "You want travel to..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA7.png",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB7.png",
@@ -71,7 +71,7 @@ const data = [
   },
   {
     page: 8,
-    question: "It's the weekends and you are found..",
+    question: "It's the weekends and you are likely doing..",
     answer: {
       A: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qA8.jpg",
       B: "https://cycquiz.s3.ap-southeast-1.amazonaws.com/images/qB8.png",
