@@ -56,15 +56,34 @@
   overflow: hidden;
 }
 */
-.mainResults {
-  background: url("results.jpg") repeat;
+* {
+  /* background-color: white; */
+}
+
+body {
+  display: flex;
+  overflow-x: hidden;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  margin: -0.5em;
+  min-width: 100vw;
+}
+
+.footerChild {
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .question {
   display: flex;
-  margin: 5em;
+  margin: 1em;
   padding: 1em 1em;
-  height: 4em;
+  height: 1em;
+  text-align: center;
 }
 
 .imgBtnGrp {
@@ -89,7 +108,57 @@
 
 .header {
   display: flex;
+  min-width: 100vw;
   background-color: black;
   color: white;
-  flex-grow: 1;
+  justify-content: space-between;
+  margin: -0.5em;
+}
+
+.headerChild {
+  margin: 1em;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  margin: 1em auto;
+  padding: 1em;
+}
+
+.fbShare {
+  margin-top: 2em;
+}
+
+.waShare {
+  margin-top: 1em;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  background-color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+a {
+  font-size: 1rem;
+  color: white;
+}
+
+.personalityText {
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 2em;
+  margin: 0.5em;
 }

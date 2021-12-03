@@ -2,13 +2,28 @@ import React, { useState, useReducer, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import data from "./data.js";
-
+import { FacebookShareButton, WhatsappShareButton } from "react-share";
+import { FacebookIcon, WhatsappIcon } from "react-share";
 const initialResults = { A: 0, B: 0, C: 0, D: 0 };
 
 function Header() {
   return (
     <div className="header">
-      <h1>CYC</h1>
+      {/* <h1>CYC</h1> */}
+      <h3 className="headerChild">
+        <img src="../cycLogo.png" />
+      </h3>
+      <a className="headerChild" href="https://cyctailor.com">
+        Home
+      </a>
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <div className="footer">
+      <h3 className="footerChild">Ⓒ 2021 CYC Company Pte Ltd</h3>
     </div>
   );
 }
@@ -59,12 +74,12 @@ function reducer(state, action) {
 
 function Results({ results }) {
   let mainTrait;
+  let personalityText;
   let youAre = "You are: ";
   let personality = [];
   let sortedResults = Object.fromEntries(
     Object.entries(results).sort(([, a], [, b]) => b - a)
   );
-  console.log(sortedResults);
   for (let [key, value] of Object.entries(sortedResults)) {
     switch (key) {
       case "A":
@@ -90,6 +105,30 @@ function Results({ results }) {
       continue;
     }
     personality.push(`${percentage}% ${key}`);
+    switch (mainTrait) {
+      case "Romantic":
+        personalityText =
+          "You are expressive, often showcasing your personality\
+        through the lens of your clothings. There is no one favourite color as your dressing\
+        style differs with your mood.";
+        break;
+      case "Classic":
+        personalityText =
+          "You are a person who dress himself sharp and according to\
+        social conventions. Your favourite color is white and navy.";
+        break;
+      case "Sartorial":
+        personalityText =
+          "You are often dressed sharply, and pay meticulous attention to details.";
+        break;
+      case "Natural":
+        personalityText =
+          "You favor colors that goes well with each other, typically earthy tones as\
+        they showcase the simplicity of your dresing.";
+        break;
+      default:
+        throw new Error();
+    }
   }
   const personalityResult = personality.map((results) => <p>{results}</p>);
   return (
@@ -97,7 +136,27 @@ function Results({ results }) {
       <h3>{youAre}</h3>
       <b>{personalityResult}</b>
       <hr />
-      <p>Your main personality is: {mainTrait}</p>
+      <p>
+        Your main personality is: <b>{mainTrait}</b>
+      </p>
+      <p className="personalityText">{personalityText}</p>
+      <br />
+      <br />
+      <FacebookShareButton
+        className="fbShare"
+        url={"https://quiz.cyctailor.com"}
+        quote={`My personality is ${mainTrait}! Find out yours with CYC!`}
+      >
+        <FacebookIcon size={32} round />
+        <p>Share on Facebook</p>
+      </FacebookShareButton>
+      <WhatsappShareButton
+        className="waShare"
+        title={"https://quiz.cyctailor.com"}
+      >
+        <WhatsappIcon size={32} round />
+        <p>Share on WhatsApp</p>
+      </WhatsappShareButton>
     </div>
   );
 }
@@ -137,6 +196,7 @@ function App() {
       <Question pageNumber={pageNumber()} />
       <Answer pageNumber={pageNumber()} handleClick={handleClick} />
       {currentPage === data.length + 1 ? <Results results={results} /> : ""}
+      <Footer />
     </div>
   );
 }
