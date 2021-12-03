@@ -71,12 +71,14 @@ function Results({ results }) {
       case "Sartorial":
         personalityText =
           "You have a Sartorial personality. You are often dressed sharply, with attention to details. Your clothing choices\
-          reflect your inner confidence.";
+          reflect your inner confidence. Stripes shirt are part of your wardrobe, and you are often found\
+          pairing your shirt with a safari jacket or a sports blazer.";
         break;
       case "Natural":
         personalityText =
           "You have a Natural personality. You favor colors that goes well with each other, typically earthy tones as\
-        they showcase the simplicity of your dresing.";
+        they showcase the simplicity of your dresing. Fabrics like linen value-add your wardrobe, as you\
+        value functionality over form.";
         break;
       default:
         throw new Error();
