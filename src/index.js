@@ -10,12 +10,12 @@ function Header() {
   return (
     <div className="header">
       {/* <h1>CYC</h1> */}
-      <h3 className="headerChild">
+      <h4 className="headerChild">
         <a href="https://cyctailor.com">
           <img className="cycLogo" src="../cycLogo.png" />
         </a>
-      </h3>
-      <h3>CYC Personality Quiz</h3>
+      </h4>
+      <h4>CYC Personality Quiz</h4>
     </div>
   );
 }
@@ -23,7 +23,7 @@ function Header() {
 function Footer() {
   return (
     <div className="footer">
-      <h3 className="footerChild">Ⓒ 2021 CYC Company Pte Ltd</h3>
+      <h4 className="footerChild">Ⓒ 2021 CYC Company Pte Ltd</h4>
     </div>
   );
 }
@@ -73,6 +73,7 @@ function reducer(state, action) {
 }
 
 function Results({ results }) {
+  let sideText;
   let mainTrait;
   let personalityText;
   let youAre = "You are: ";
@@ -80,6 +81,23 @@ function Results({ results }) {
   let sortedResults = Object.fromEntries(
     Object.entries(results).sort(([, a], [, b]) => b - a)
   );
+  let sideTrait = Object.entries(sortedResults)[1][0];
+  switch (sideTrait) {
+    case "A":
+      sideTrait = "Romantic";
+      break;
+    case "B":
+      sideTrait = "Classic";
+      break;
+    case "C":
+      sideTrait = "Sartorial";
+      break;
+    case "D":
+      sideTrait = "Natural";
+      break;
+    default:
+      throw new Error();
+  }
   for (let [key, value] of Object.entries(sortedResults)) {
     switch (key) {
       case "A":
@@ -108,22 +126,46 @@ function Results({ results }) {
     switch (mainTrait) {
       case "Romantic":
         personalityText =
-          "You are expressive, often showcasing your personality\
+          "You are a Romantic personality. Expressive, often showcasing your personality\
         through the lens of your clothings. There is no one favourite color as your dressing\
         style differs with your mood.";
         break;
       case "Classic":
         personalityText =
-          "You are a person who dress himself sharp and according to\
+          "You are a Classic personality who dress himself sharp and according to\
         social conventions. Your favourite color is white and navy.";
         break;
       case "Sartorial":
         personalityText =
-          "You are often dressed sharply, and pay meticulous attention to details.";
+          "You have a Sartorial personality. You are often dressed sharply, and pay meticulous attention to details.";
         break;
       case "Natural":
         personalityText =
-          "You favor colors that goes well with each other, typically earthy tones as\
+          "You have a Natural personality. You favor colors that goes well with each other, typically earthy tones as\
+        they showcase the simplicity of your dresing.";
+        break;
+      default:
+        throw new Error();
+    }
+    switch (sideTrait) {
+      case "Romantic":
+        sideText =
+          " You are also an expressive romantic, often showcasing your personality\
+        through the lens of your clothings. There is no one favourite color as your dressing\
+        style differs with your mood.";
+        break;
+      case "Classic":
+        sideText =
+          " Also, you are a classic person who dress himself sharp and according to\
+        social conventions. Your favourite color is white and navy.";
+        break;
+      case "Sartorial":
+        sideText =
+          " Also, your sartorial style means that you are often dressed sharply, and pay meticulous attention to details.";
+        break;
+      case "Natural":
+        sideText =
+          " Also,your natural side favor colors that goes well with each other, typically earthy tones as\
         they showcase the simplicity of your dresing.";
         break;
       default:
@@ -137,9 +179,14 @@ function Results({ results }) {
       <b>{personalityResult}</b>
       <hr />
       <p>
-        Your main personality is: <b>{mainTrait}</b>
+        Your main personality is <b>{mainTrait}</b>, and your secondary
+        personality is <b>{sideTrait}</b>.
       </p>
-      <p className="personalityText">{personalityText}</p>
+      <p className="personalityText">
+        {personalityText}
+
+        {sideText}
+      </p>
       <br />
       <br />
       <FacebookShareButton
@@ -187,7 +234,6 @@ function App() {
     setResults({ type: e.target.value });
     setNextPage(currentPage + 1);
   };
-
   function pageNumber() {
     return data.filter((item) => item.page === currentPage);
   }
