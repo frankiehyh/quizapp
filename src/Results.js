@@ -64,12 +64,13 @@ function Results({ results }) {
       case "Classic":
         personalityText =
           "You are a Classic personality who dresses himself well and according to\
-        social conventions.";
+        social conventions. You follow the rules but you dress well with flair, making a white shirt and\
+        a navy trousers look good.";
         break;
       case "Sartorial":
         personalityText =
           "You have a Sartorial personality. You are often dressed sharply, with attention to details. Your clothing choices\
-          reflects your inner confidence.";
+          reflect your inner confidence.";
         break;
       case "Natural":
         personalityText =
@@ -83,7 +84,7 @@ function Results({ results }) {
       case "Romantic":
         sideText =
           " You are also an expressive romantic, often showcasing your personality\
-        through the lens of your clothings. There is no one favourite color as your dressing\
+        through the lens of your clothings. There is no one favourite color of yours, as your dressing\
         style differs with your mood.";
         break;
       case "Classic":
