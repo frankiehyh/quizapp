@@ -64,7 +64,7 @@ function Results({ results }) {
       case "Classic":
         personalityText =
           "You are a Classic personality who dresses himself well and according to\
-        social conventions. Your favourite colors are white and navy.";
+        social conventions.";
         break;
       case "Sartorial":
         personalityText =
@@ -89,16 +89,20 @@ function Results({ results }) {
       case "Classic":
         sideText =
           " Also, you are a classic person who dresses himself well and according to\
-        social conventions. Your favourite colors are white and navy.";
+        social conventions. Your favourite colors are white and navy, as they are the essential colors of\
+        a gentleman's wardrobe.";
         break;
       case "Sartorial":
         sideText =
-          " Also, your sartorial style means that you are often dressed sharply, and pay meticulous attention to details.";
+          " Also, your sartorial style means that you are often dressed sharply, and pay meticulous attention to details.\
+          When it comes to your dressing style, colors like brown and light grey with patterns like Prince-of-Wales check\
+          are often found in your wardrobe.";
         break;
       case "Natural":
         sideText =
           " Also,your natural side favor colors that goes well with each other, typically earthy tones as\
-        they showcase the simplicity of your dresing.";
+        they showcase the simplicity of your dressing style, such as khaki, green and sand. Occasionaly, linen\
+        shirts can be found within your wardrobe.";
         break;
       default:
         throw new Error();
