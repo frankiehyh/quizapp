@@ -1,10 +1,10 @@
 body {
   display: flex;
-  overflow-x: hidden;
+  flex-grow: 1;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  flex-shrink: 0;
   background-color: black;
   color: white;
   margin: -0.5em;
