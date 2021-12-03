@@ -1,17 +1,5 @@
-<<<<<<< HEAD
 /* .question {
   justify-content: center;
-=======
-body {
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-.main {
->>>>>>> c0885bca00668b84f29318ec3daf66b718f60bd1
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -68,11 +56,9 @@ body {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
 .mainResults {
   background: url("https://i.imgur.com/vseVQEK.jpg") repeat;
 } */
-
 
 .question {
   display: flex;
@@ -81,13 +67,12 @@ body {
   height: 4em;
 }
 
-
 .imgBtnGrp {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   max-height: 409px;
-  padding: 5em .1em;
+  padding: 5em 0.1em;
   margin-top: 0 auto;
   justify-content: center;
 }
@@ -99,7 +84,7 @@ body {
   max-width: 150px;
   margin: 1px;
   border-radius: 0.5em;
-  padding: .1em .1em .1em .1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
 }
 
 .header {
@@ -108,15 +93,3 @@ body {
   color: white;
   flex-grow: 1;
 }
-=======
-.question {
-  justify-content: center;
-  display: flex;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  margin: 0;
-  margin-bottom: -5em;
-  margin-top: 2em;
-  font-size: 1em;
-}
->>>>>>> c0885bca00668b84f29318ec3daf66b718f60bd1
