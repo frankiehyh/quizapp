@@ -177,7 +177,6 @@ function Results({ results }) {
     <div className="results">
       <h3>{youAre}</h3>
       <b>{personalityResult}</b>
-      <hr />
       <p>
         Your main personality is <b>{mainTrait}</b>, and your secondary
         personality is <b>{sideTrait}</b>.
