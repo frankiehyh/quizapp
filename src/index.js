@@ -126,18 +126,19 @@ function Results({ results }) {
     switch (mainTrait) {
       case "Romantic":
         personalityText =
-          "You are a Romantic personality. Expressive, often showcasing your personality\
+          "You have a Romantic personality. Expressive, often showcasing your personality\
         through the lens of your clothings. There is no one favourite color as your dressing\
         style differs with your mood.";
         break;
       case "Classic":
         personalityText =
           "You are a Classic personality who dress himself sharp and according to\
-        social conventions. Your favourite color is white and navy.";
+        social conventions. Your favourite colors are white and navy.";
         break;
       case "Sartorial":
         personalityText =
-          "You have a Sartorial personality. You are often dressed sharply, and pay meticulous attention to details.";
+          "You have a Sartorial personality. You are often dressed sharply, with attention to details. Your clothing choices\
+          reflects your inner confidence.";
         break;
       case "Natural":
         personalityText =
@@ -157,7 +158,7 @@ function Results({ results }) {
       case "Classic":
         sideText =
           " Also, you are a classic person who dress himself sharp and according to\
-        social conventions. Your favourite color is white and navy.";
+        social conventions. Your favourite colors are white and navy.";
         break;
       case "Sartorial":
         sideText =
