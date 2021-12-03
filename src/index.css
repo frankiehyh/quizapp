@@ -1,4 +1,4 @@
-.question {
+/* .question {
   justify-content: center;
   display: flex;
   align-items: center
@@ -47,4 +47,40 @@
 
 .mainResults {
   background: url("https://i.imgur.com/vseVQEK.jpg") repeat;
+} */
+
+
+.question {
+  display: flex;
+  margin: 5em;
+  padding: 1em 1em;
+  height: 4em;
+}
+
+
+.imgBtnGrp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-height: 409px;
+  padding: 5em .1em;
+  margin-top: 0 auto;
+  justify-content: center;
+}
+
+.imgBtn {
+  min-height: 150px;
+  max-height: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  margin: 1px;
+  border-radius: 0.5em;
+  padding: .1em .1em .1em .1em;
+}
+
+.header {
+  display: flex;
+  background-color: black;
+  color: white;
+  flex-grow: 1;
 }
