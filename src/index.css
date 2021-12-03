@@ -1,65 +1,3 @@
-/* .question {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow: hidden;
-  flex: 1;
-  margin: 0 auto;
-}
-
-.navbar {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-direction: row;
-  background: black;
-  color: white;
-  overflow: hidden;
-  margin: 0.1em;
-}
-
-#logo {
-  max-width: 5em;
-  max-height: 5em;
-}
-
-.imgBtnGrp {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  margin: 10em auto;
-  flex-grow: 1;
-}
-
-.imgBtn {
-  border-radius: 0.5em;
-  display: flex;
-  flex: 1;
-  min-width: 15em;
-  max-width: 15em;
-  min-height: 15em;
-  max-height: 15em;
-  margin-top: -5em;
-}
-
-.footer {
-  display: flex;
-  width: 100vw;
-  justify-content: center;
-  flex-direction: row;
-  align-items: flex-end;
-  font-size: 0.5em;
-  background: black;
-  color: white;
-  overflow: hidden;
-}
-*/
-* {
-  /* background-color: white; */
-}
-
 body {
   display: flex;
   overflow-x: hidden;
@@ -111,12 +49,12 @@ body {
   min-width: 100vw;
   background-color: black;
   color: white;
-  justify-content: space-between;
   margin: -0.5em;
 }
 
 .headerChild {
   margin: 1em;
+  padding: 0.2em;
 }
 
 .results {
@@ -161,4 +99,8 @@ a {
   border: 1px solid black;
   padding: 2em;
   margin: 0.5em;
+}
+
+.cycLogo {
+  max-height: 50px;
 }

@@ -11,11 +11,11 @@ function Header() {
     <div className="header">
       {/* <h1>CYC</h1> */}
       <h3 className="headerChild">
-        <img src="../cycLogo.png" />
+        <a href="https://cyctailor.com">
+          <img className="cycLogo" src="../cycLogo.png" />
+        </a>
       </h3>
-      <a className="headerChild" href="https://cyctailor.com">
-        Home
-      </a>
+      <h3>CYC Personality Quiz</h3>
     </div>
   );
 }
