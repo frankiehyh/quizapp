@@ -59,7 +59,8 @@ function Results({ results }) {
         personalityText =
           "You have a Romantic personality. Expressive, often showcasing your personality\
         through the lens of your clothings. There is no one favourite color as your dressing\
-        style differs with your mood.";
+        style differs with your mood. You are also most likely to break boundaries, as clothes with\
+        interesting designs are those that catches your eye.";
         break;
       case "Classic":
         personalityText =
