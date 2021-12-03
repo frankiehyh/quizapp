@@ -153,6 +153,7 @@ function Results({ results }) {
       <WhatsappShareButton
         className="waShare"
         title={"CYC Personality Quiz"}
+        url={"https://quiz.cyctailor.com"}
         separator={" "}
       >
         <WhatsappIcon size={32} round />
