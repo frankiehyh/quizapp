@@ -1,7 +1,6 @@
 body {
   display: flex;
   flex-grow: 1;
-  font-family: Helvetica, Arial, sans-serif;
 }
 .footer {
   display: flex;

@@ -211,23 +211,6 @@ function Results({ results }) {
 }
 
 function App() {
-  const useSemiPersistantState = (key, initialState) => {
-    const [value, setValue] = useState(
-      localStorage.getItem(key) || initialState
-    );
-    useEffect(() => {
-      localStorage.setItem(key, value);
-    }, [value, key]);
-    return [value, setValue];
-  };
-  const [loggedIn, setLogin] = useSemiPersistantState("loggedIn", false);
-  const [name, setName] = useSemiPersistantState("name", "Guest");
-  const changes = (e) => setName(e.name);
-  const responseFacebook = (response) => {
-    changes(response);
-    setLogin(true);
-    setName(response.name);
-  };
   const [currentPage, setNextPage] = useState(1);
   const [results, setResults] = useReducer(reducer, initialResults);
   const handleClick = (e) => {
