@@ -23,7 +23,7 @@ function Header() {
 function Footer() {
   return (
     <div className="footer">
-      <h4 className="footerChild">Ⓒ 2021 CYC Company Pte Ltd</h4>
+      <h5 className="footerChild">Ⓒ 2021 CYC Company Pte Ltd</h5>
     </div>
   );
 }
@@ -176,7 +176,7 @@ function Results({ results }) {
   return (
     <div className="results">
       <h3>{youAre}</h3>
-      <b>{personalityResult}</b>
+      <b className="personalityResults">{personalityResult}</b>
       <p>
         Your main personality is <b>{mainTrait}</b>, and your secondary
         personality is <b>{sideTrait}</b>.
