@@ -55,10 +55,10 @@
   color: white;
   overflow: hidden;
 }
-
+*/
 .mainResults {
-  background: url("https://i.imgur.com/vseVQEK.jpg") repeat;
-} */
+  background: url("results.jpg") repeat;
+}
 
 .question {
   display: flex;
