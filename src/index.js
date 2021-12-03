@@ -4,6 +4,7 @@ import "./index.css";
 import data from "./data.js";
 
 const initialResults = { A: 0, B: 0, C: 0, D: 0 };
+
 function Header() {
   return (
     <div className="header">
