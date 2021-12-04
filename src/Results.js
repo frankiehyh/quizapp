@@ -138,7 +138,7 @@ function Results({ results }) {
       </FacebookShareButton>
       <WhatsappShareButton
         className="waShare"
-        title={"Find out your personality with CYC: "}
+        title={`My personality is ${mainTrait}! Find out your personality with CYC: `}
         url={"https://quiz.cyctailor.com"}
         separator={" "}
       >
